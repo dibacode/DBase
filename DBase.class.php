@@ -140,7 +140,7 @@
 					$stmt->execute();
 					$this->rows_affected = $stmt->affected_rows;
 					
-					if( preg_match( '/^\s*(insert|delete|update|replace)\s/i', $query_str, $match ) ){
+					if( preg_match( '/^\s*(insert|delete|update|replace|create|drop)\s/i', $query_str, $match ) ){
 						$match = strtolower( trim( $match[0], " " ) );
 						if( $match == "insert" || $match == "replace" ){
 							$this->insert_id = $stmt->insert_id ;
